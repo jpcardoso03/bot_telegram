@@ -1,12 +1,12 @@
 from openpyxl import load_workbook
 from datetime import datetime
 import requests
-
+from config import TOKEN,CHAT_ID
 
 # CONFIGURAÇÕES 
 CAMINHO_PLANILHA = 'vendas_de_lanches.xlsx'
-TOKEN_TELEGRAM = '7958876280:AAFLfRi3z8PrNTr_WPON3I05FkXFggopSis'
-CHAT_ID = '1479650912'
+
+
 
 # COLETAR DADOS DO USUÁRIO 
 print("📋 CADASTRO DE NOVO PEDIDO")
@@ -49,7 +49,7 @@ mensagem = (
     f"💳 Pagamento: {forma_pagamento}"
 )
 
-url = f'https://api.telegram.org/bot{TOKEN_TELEGRAM}/sendMessage'
+url = f'https://api.telegram.org/bot{TOKEN}/sendMessage'
 dados = {
     'chat_id': CHAT_ID,
     'text': mensagem,
